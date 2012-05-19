@@ -26,6 +26,10 @@ abstract class BootBaseMenu extends CWidget
 	 */
 	public $htmlOptions = array();
 
+	public function init() {
+		$this->htmlOptions['id']=$this->getId();
+	}
+
 	/**
 	 * Runs the widget.
 	 */
@@ -33,7 +37,7 @@ abstract class BootBaseMenu extends CWidget
 	{
 		echo CHtml::openTag('ul', $this->htmlOptions);
 		$this->renderItems($this->items);
-		echo '</ul>';
+		echo CHtml::closeTag('ul');
 	}
 
 	/**

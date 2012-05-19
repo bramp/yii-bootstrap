@@ -45,6 +45,8 @@ class BootMenu extends BootBaseMenu
 	 */
 	public function init()
 	{
+		parent::init();
+
 		$route = $this->controller->getRoute();
 		$this->items = $this->normalizeItems($this->items, $route);
 
